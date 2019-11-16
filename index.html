@@ -15,20 +15,73 @@
     <header>
       <div class="container">
         <div class="row">
-          <div class="col"><h1>Tree Planter</h1></div>
+          <div class="col"><h1 class="text-center">Tree Planter</h1></div>
         </div>
       </div>
     </header>
     <main>
       <div class="container-fluid">
         <div class="row">
-          <div class="col"></div>
-          <div class="col">
+          <div class="col-4">
+            <h3>Resources</h3>
+            <p>Acorns: <span id="num-acorns"></span></p>
+            <p>Scoops: <span id="num-scoops"></span></p>
+            <p>Shovels: <span id="num-shovels"></span></p>
+            <p>Squirrels: <span id="num-squirrels"></span></p>
+            <p>Johnny Oakseeds: <span id="num-johnnys"></span></p>
+          </div>
+          <div class="col-4 text-center">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/WikiVoc-acorn-1.svg/230px-WikiVoc-acorn-1.svg.png"
+              onclick="gather()"
             />
           </div>
-          <div class="col"></div>
+          <div class="col-4">
+            <div class="row">
+              <div class="col-12">
+                <h3>Click Upgrades</h3>
+                <p>
+                  Acorn Scoops:
+                  <button
+                    class="btn btn-primary"
+                    onclick="addUpgrade('scoop')"
+                    id="scoop-button"
+                    disabled
+                  ></button>
+                </p>
+                <p>
+                  Acorn Shovels:
+                  <button
+                    class="btn btn-primary"
+                    onclick="addUpgrade('shovel')"
+                    id="shovel-button"
+                    disabled
+                  ></button>
+                </p>
+              </div>
+              <div class="col-12">
+                <h3>Auto Upgrades</h3>
+                <p>
+                  Squirrels:
+                  <button
+                    class="btn btn-primary"
+                    onclick="addUpgrade('squirrel')"
+                    id="squirrel-button"
+                    disabled
+                  ></button>
+                </p>
+                <p>
+                  Johnny Oakseeds:
+                  <button
+                    class="btn btn-primary"
+                    onclick="addUpgrade('johnny')"
+                    id="johnny-button"
+                    disabled
+                  ></button>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
