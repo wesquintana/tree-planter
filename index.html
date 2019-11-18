@@ -9,13 +9,17 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Tree Planter</title>
+    <title>Acorn Hoarder</title>
   </head>
   <body>
     <header>
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col"><h1 class="text-center">Tree Planter</h1></div>
+          <div class="col">
+            <h1 class="text-center">
+              Acorn Hoarder
+            </h1>
+          </div>
         </div>
       </div>
     </header>
@@ -23,24 +27,41 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-4">
-            <h3>Resources</h3>
+            <h5>Resources</h5>
             <p>Acorns: <span id="num-acorns"></span></p>
-            <p>Scoops: <span id="num-scoops"></span></p>
-            <p>Shovels: <span id="num-shovels"></span></p>
-            <p>Squirrels: <span id="num-squirrels"></span></p>
-            <p>Johnny Oakseeds: <span id="num-johnnys"></span></p>
+            <p id="scoop-p" hidden>
+              Scoops: <span id="num-scoops"></span> giving:
+              <span id="scoop-multiplier"></span>x Click
+            </p>
+            <p id="shovel-p" hidden>
+              Shovels: <span id="num-shovels"></span> giving:
+              <span id="shovel-multiplier"></span>x Click
+            </p>
+            <p id="squirrel-p" hidden>
+              Squirrels: <span id="num-squirrels"></span> giving: +<span
+                id="squirrel-multiplier"
+              ></span>
+              Passive
+            </p>
+            <p id="johnny-p" hidden>
+              Johnny Oakseeds: <span id="num-johnnys"></span> giving: +<span
+                id="johnny-multiplier"
+              ></span>
+              Passive
+            </p>
           </div>
           <div class="col-4 text-center">
             <img
+              class="w-100"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/WikiVoc-acorn-1.svg/230px-WikiVoc-acorn-1.svg.png"
               onclick="gather()"
             />
           </div>
-          <div class="col-4">
+          <div class="col-4 text-right">
             <div class="row">
               <div class="col-12">
-                <h3>Click Upgrades</h3>
-                <p>
+                <h5>Click Upgrades</h5>
+                <p id="buy-scoop" hidden>
                   Acorn Scoops:
                   <button
                     class="btn btn-primary"
@@ -49,7 +70,7 @@
                     disabled
                   ></button>
                 </p>
-                <p>
+                <p id="buy-shovel" hidden>
                   Acorn Shovels:
                   <button
                     class="btn btn-primary"
@@ -60,8 +81,8 @@
                 </p>
               </div>
               <div class="col-12">
-                <h3>Auto Upgrades</h3>
-                <p>
+                <h5>Auto Upgrades</h5>
+                <p id="buy-squirrel" hidden>
                   Squirrels:
                   <button
                     class="btn btn-primary"
@@ -70,7 +91,7 @@
                     disabled
                   ></button>
                 </p>
-                <p>
+                <p id="buy-johnny" hidden>
                   Johnny Oakseeds:
                   <button
                     class="btn btn-primary"
@@ -85,7 +106,9 @@
         </div>
       </div>
     </main>
-
+    <footer class="container-fluid text-center">
+      <button class="btn btn-primary" onclick="dev()">Dev</button>
+    </footer>
     <script src="app.js"></script>
   </body>
 </html>
